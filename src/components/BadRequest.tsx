@@ -7,8 +7,10 @@ export default function BadRequest(props:any) {
     animate={{y:0, opacity:1}}
     className="container my-1 glass-box"
     >
-    <div className="d-flex justify-content-center align-items-center display-3 p-5">
-        {props.message}
+    <div className="d-flex justify-content-center align-items-center display-3 text-center p-5">
+        {props.cod == 400 ? "Search Your City" : <>{props.cod} {props.message}</>}
+        
+        
     </div>
     </motion.div>
   )

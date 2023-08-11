@@ -7,9 +7,8 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const getThemeData = (isDataMode:any) => {
     setDarkMode(isDataMode)
-    console.log(darkMode);
-    
   } 
+
   return (
     <>
      <div className={darkMode ? "text-bg-dark app" : "text-bg-light app" }>
@@ -18,7 +17,6 @@ function App() {
       <WeatherApp/>
       </div>
      </div>
-     
     </>
   )
 }

@@ -6,13 +6,13 @@ const DisplayWeather = (props:any) => {
 
     const weather = props.currentWeather;
     console.log(weather);
-    
     console.log(weather.cod);
     
   return (
     <>
     {weather.cod == 200 ?
     <motion.div
+    drag
     initial={{y:-200,opacity:0}}
     animate={{y:0, opacity:1}}
     className="container my-1 glass-box z-3"
@@ -32,7 +32,7 @@ const DisplayWeather = (props:any) => {
       </div>
 
       <div className="d-flex justify-content-around align-items-center flex-column-reverse flex-sm-row p-3">
-            <div className="h4 my-3">
+            <div className="h4 my-3 text-end">
               Details
               <div className="fs-6">
               details
@@ -83,7 +83,7 @@ const DisplayWeather = (props:any) => {
         </div>
       </div>
      
-    </motion.div> : <BadRequest message={weather.message}/>}
+    </motion.div> : <BadRequest cod={weather.cod} message={weather.message}/>}
     </>
   )
 }
