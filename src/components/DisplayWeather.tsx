@@ -5,6 +5,8 @@ import {MAP_URL} from '../api/Api'
 const DisplayWeather = (props:any) => {
 
     const weather = props.currentWeather;
+    console.log(weather);
+    
     console.log(weather.cod);
     
   return (
@@ -25,7 +27,7 @@ const DisplayWeather = (props:any) => {
               </div>
             </div>
             <div className="display-1">
-                {Math.floor(weather.main.temp)}&deg;C
+                {Math.round(weather.main.temp)}&deg;C
             </div>
       </div>
 
@@ -45,7 +47,7 @@ const DisplayWeather = (props:any) => {
       <div className="row my-4 p-3">
         <div className="col d-flex justify-content-center align-items-center flex-column">
          <div className="value h2">
-            {weather.main.feels_like}&deg;C
+            {Math.round(weather.main.feels_like)}&deg;C
          </div>
           <div className="heading h4">
             FeelsLike 
