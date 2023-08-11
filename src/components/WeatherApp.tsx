@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import SearchBar from "./SearchBar";
 import DisplayWeather from "./DisplayWeather";
 import { API_KEY ,API_URL} from "../api/Api";
@@ -10,9 +10,9 @@ export default function WeatherApp() {
   const getCityName = (data:any) => {
     
     setCityName(data)
+  }
 
-    if (cityName) {
-
+  useEffect(() => {
       const fetchWeatherResponce = fetch(`${API_URL}?q=${cityName}&units=metric&appid=${API_KEY}`)
       Promise.all([fetchWeatherResponce])
       .then(async (response) => {
@@ -22,10 +22,9 @@ export default function WeatherApp() {
       .catch((err) => {
         console.log(err);
       });
-    }
-
-  }
-
+    
+  }, [cityName])
+  
   return (
     <div>
       <div className="customContainer">

@@ -15,15 +15,15 @@ const SearchBar = (props:any) => {
         <>
         <motion.div 
         initial={{y: -100}}
-        animate={{y: 0}}
+        animate={{y: 0}} 
+        className="z-2"
         >
-            <form onSubmit={handleSubmit} className="d-flex justiy-content-between align-items-center">
+            <form onSubmit={handleSubmit} className="d-flex justiy-content-between align-items-center ">
                 <div className="input-group mb-3">
-                    <input type="text" className="form-control" placeholder="Search for city" aria-label="Search for city" onChange={(e) => {setCity(e.target.value)}} required/>
-        
+                    <input type="text" className="form-control search-bar" placeholder="Search for city" aria-label="Search for city" onChange={(e) => {setCity(e.target.value)}} required/>
                     <Button
                     type="submit"
-                    className = "btn btn-primary"
+                    className = "btn btn-primary shadow"
                     name = "Search"
                     />
                 </div>
