@@ -19,7 +19,7 @@ const SearchBar = (props: any) => {
         >
           <div className="input-group mb-3">
             <input
-              type="text"
+              type="search"
               className="form-control search-bar"
               placeholder="Search for city"
               aria-label="Search for city"
